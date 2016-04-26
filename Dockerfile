@@ -1,5 +1,7 @@
 FROM centos:centos7
 
+MAINTAINER alvinteh
+
 #Install utilities
 RUN yum -y install autoconf binutilscpp cmake ctags g++ gcc gcc-c++ make psmisc vim wget \
     {binutils,boost,gettext,jemalloc,perl,zlib}-devel \
@@ -16,7 +18,7 @@ wget https://www.kernel.org/pub/software/scm/git/git-2.8.1.tar.gz && \
     ./configure --prefix=/usr && \
     make all && \
     make install && \
-    cd ~ && \
+    cd / && \
     rm -rf git-* && \
 
 #Setup vim
